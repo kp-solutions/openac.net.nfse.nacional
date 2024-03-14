@@ -36,16 +36,16 @@ namespace OpenAC.Net.NFSe.Nacional.Common;
 
 public sealed class TributoMunicipal
 {
-    [DFeElement(TipoCampo.Enum, "tribISSQN", Ocorrencia = Ocorrencia.Obrigatoria)]
+    [DFeElement(TipoCampo.Enum, "tribISSQN", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 0)]
     public TributoISSQN ISSQN { get; set; }
 
     [DFeElement(TipoCampo.Str, "cPaisResult", Min = 2, Max = 2, Ocorrencia = Ocorrencia.NaoObrigatoria)]
     public string? CodPais { get; set; }
     
-    [DFeElement("tribMun", Ocorrencia = Ocorrencia.NaoObrigatoria)]
+    [DFeElement("BM", Ocorrencia = Ocorrencia.NaoObrigatoria)]
     public BeneficioMunicipal? Beneficio { get; set; }
     
-    [DFeElement("tribMun", Ocorrencia = Ocorrencia.NaoObrigatoria)]
+    [DFeElement("exigSusp", Ocorrencia = Ocorrencia.NaoObrigatoria)]
     public ExigibilidadeSuspensa? Suspensao { get; set; }
     
     [DFeElement(TipoCampo.Enum, "tpImunidade", Ocorrencia = Ocorrencia.NaoObrigatoria)]

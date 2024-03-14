@@ -50,7 +50,8 @@ public class XmlGzipJsonConverter : JsonConverter<string>
         using var gZipStream = new GZipStream(memoryStream, CompressionMode.Decompress);
         using var memoryStreamOutput = new MemoryStream();
         gZipStream.CopyTo(memoryStreamOutput);
-        
+        memoryStreamOutput.Flush();
+
         var outputBytes = memoryStreamOutput.ToArray();
 
         return Encoding.UTF8.GetString(outputBytes);
@@ -68,7 +69,8 @@ public class XmlGzipJsonConverter : JsonConverter<string>
         using var memoryStream = new MemoryStream();
         using var gZipStream = new GZipStream(memoryStream, CompressionMode.Compress);
         gZipStream.Write(dados, 0, dados.Length);
-        
-        writer.WriteBase64StringValue(gZipStream.ToByteArray());
+        gZipStream.Flush();
+
+        writer.WriteBase64StringValue(memoryStream.ToArray());
     }
 }

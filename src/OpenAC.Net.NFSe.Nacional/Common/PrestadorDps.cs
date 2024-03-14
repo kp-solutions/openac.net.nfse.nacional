@@ -36,9 +36,9 @@ namespace OpenAC.Net.NFSe.Nacional.Common;
 public sealed class PrestadorDps : InfoPessoaNFSe
 {
     #region Properties
-
-    [DFeElement("regTrib", Ocorrencia = Ocorrencia.Obrigatoria)]
+    
+    [DFeElement("regTrib", Ocorrencia = Ocorrencia.Obrigatoria, Ordem = 2)]
     public RegimeTributario Regime { get; set; } = new();
-
+    
     #endregion Properties
 }

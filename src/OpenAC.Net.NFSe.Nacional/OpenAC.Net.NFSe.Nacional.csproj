@@ -37,8 +37,6 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
-      <PackageReference Include="OpenAC.Net.Core" Version="1.6.0-beta.1" />
-      <PackageReference Include="OpenAC.Net.DFe.Core" Version="1.6.0-beta.1" />
       <PackageReference Include="System.Net.Http.Json" Version="7.0.1" />
     </ItemGroup>
 
@@ -59,6 +57,38 @@
             <Pack>True</Pack>
             <PackagePath>content\Schemas\</PackagePath>
         </None>
+    </ItemGroup>          
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\OpenAC.Net.Core\src\OpenAC.Net.Core\OpenAC.Net.Core.csproj" />
+      <ProjectReference Include="..\..\..\OpenAC.Net.DFe.Core\src\OpenAC.Net.DFe.Core\OpenAC.Net.DFe.Core.csproj" />
+    </ItemGroup>          
+
+    <ItemGroup>
+      <None Update="Schemas\1.00\DPS_v1.00.xsd">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Schemas\1.00\evento_v1.00.xsd">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Schemas\1.00\NFSe_v1.00.xsd">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Schemas\1.00\pedRegEvento_v1.00.xsd">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Schemas\1.00\tiposComplexos_v1.00.xsd">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Schemas\1.00\tiposEventos_v1.00.xsd">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Schemas\1.00\tiposSimples_v1.00.xsd">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Schemas\1.00\xmldsig-core-schema_v1.00.xsd">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
     
 </Project>

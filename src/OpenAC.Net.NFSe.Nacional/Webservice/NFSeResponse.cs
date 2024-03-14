@@ -47,7 +47,12 @@ public sealed class NFSeResponse<T>: IOpenLog where T : class, new()
         Sucesso = sucesso;
         try
         {
-            Resultado = JsonSerializer.Deserialize<T>(resposta);
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+            
+            Resultado = JsonSerializer.Deserialize<T>(resposta, options);
         }
         catch (Exception e)
         {
